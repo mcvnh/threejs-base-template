@@ -12,7 +12,7 @@ import fragmentShader from './shaders/base/fragment.glsl';
  */
 const gui = new GUI({ width: 300 });
 const debugObject = {
-  background: 0x984343,
+  background: 0x272626,
 };
 
 gui.addColor(debugObject, 'background').onChange(() => {
