@@ -4,6 +4,9 @@ import GUI from 'lil-gui';
 import Stats from 'stats.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import vertexShader from './shaders/base/vertex.glsl';
+import fragmentShader from './shaders/base/fragment.glsl';
+
 /**
  * Debug UI
  */
@@ -82,7 +85,11 @@ renderer.setPixelRatio(sizes.pixelRatio);
 
 const box = new THREE.Mesh(
   new THREE.BoxGeometry(1,1,1),
-  new THREE.MeshBasicMaterial({ wireframe: true })
+  new THREE.ShaderMaterial({ 
+    vertexShader,
+    fragmentShader,
+    wireframe: true 
+  })
 );
 scene.add(box);
 
